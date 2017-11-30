@@ -13,7 +13,6 @@ import javax.swing.table.TableColumnModel;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.awt.event.ActionEvent;
 import javax.swing.SwingConstants;
