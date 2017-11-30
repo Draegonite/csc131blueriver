@@ -1,0 +1,84 @@
+package reader;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JTable;
+import javax.swing.border.EmptyBorder;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.border.BevelBorder;
+import java.awt.Color;
+import java.awt.Font;
+import javax.swing.JLabel;
+
+public class Report extends JFrame {
+
+	private JPanel contentPane;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args)
+	{
+		EventQueue.invokeLater(new Runnable() 
+		{
+			public void run()
+			{
+				try 
+				{
+					Report frame = new Report();
+					frame.setVisible(true);
+					//frame.add(new JLabel(new ImageIcon("C:\\Users\\Draegonite\\Pictures\\Squidward.png")));
+				} 
+				catch (Exception e) 
+				{
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	
+	/**
+	 * Create the frame.
+	 */
+	public Report() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 625, 600);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		Object firstRowData[] = {"Department", "CE", "CSC", "EEE", "CM", "ME", "ECSCS", "TOTAL"};
+		Object columnNames[] = {"Department", "CE", "CSC", "EEE", "CM", "ME", "ECSCS", "TOTAL"};
+		Object secondRowData[] = {"Lab $", "10k", "20k", "30k", "20k", "20k", "0", "100k"};
+		Object thirdRowData[] = {"Lab %", "10%", "20%", "30%", "20%", "20%", "0%", "100%"};
+		Object fourthRowData[] = {"All Assets $", "100k", "100k", "100k", "50k", "100k", "0", "450k"};
+		Object fifthRowData[] = {"All Assets %", "22.2%", "22.2%", "22.2%", "11.1%", "22.2%", "0%", "100%"};
+		DefaultTableModel model2 = new DefaultTableModel(columnNames, 0);
+		contentPane.setLayout(null);
+		JTable table = new JTable(model2);
+		table.setForeground(Color.BLACK);
+		table.setFillsViewportHeight(true);
+		table.setFont(new Font("Times New Roman", Font.BOLD, 12));
+		table.setBackground(Color.WHITE);
+		table.setSurrendersFocusOnKeystroke(true);
+		table.setBounds(5, 5, 600, 80);
+		table.setRowSelectionAllowed(false);
+		table.setDragEnabled(false);
+		contentPane.add(table);
+		
+		JLabel label = new JLabel((new ImageIcon("C:\\Users\\Draegonite\\Pictures\\Squidward.png")));
+		label.setBackground(Color.GRAY);
+		label.setBounds(120, 169, 275, 243);
+		contentPane.add(label);
+		//DefaultTableModel model = (DefaultTableModel)table.getModel();
+	    model2.addRow(firstRowData);
+	    model2.addRow(secondRowData);
+	    model2.addRow(thirdRowData);
+	    model2.addRow(fourthRowData);
+	    model2.addRow(fifthRowData);
+	}
+}
